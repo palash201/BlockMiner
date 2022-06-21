@@ -1,0 +1,15 @@
+mat-progress-bar {
+    height: 20px;
+    margin: auto;
+    width: 268px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+section {
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
