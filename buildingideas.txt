@@ -1,0 +1,13 @@
+T1 Buildings:
+
+Forge
+- Pick XP Bonus per level
+- Unlock Blacksmithing at Forge Level 10
+
+Quarry
+- Mining Power Bonus per level
+- Unlock Delving at Quarry Level 10
+
+Shrine
+- Sacrifice Rubies for Enchantments
+- No levels, but initial building cost of Stone and Rubies

@@ -2,16 +2,28 @@
     <h1>Stats</h1>
     <p>
         <mat-icon aria-label="Pickaxe icon" svgIcon="pickaxe"></mat-icon>
-         1 Block / sec
+         {{player.getBlocksPerSecond() | number: '1.0-1'}} Blocks / sec
     </p>
-    <br>
     <p>
-        <mat-icon aria-label="Block icon" svgIcon="block"></mat-icon>
-         3034
+        <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
+         {{player.getStonePerSecond() | number: '1.0-1'}} Stone / sec
     </p>
     <p>
         <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
-         48
+         {{player.getRubyChance()*100 | number: '1.0-1'}}% Ruby Chance
+    </p>
+    <br>
+    <p>
+        <mat-icon aria-label="Pickaxe icon" svgIcon="pickaxe"></mat-icon>
+         {{player.blocksMined | number: '1.0-0'}} Total Mined
+    </p>
+    <p>
+        <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
+         {{player.stone | number: '1.0-0'}}
+    </p>
+    <p>
+        <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
+         {{player.rubies | number: '1.0-0'}}
     </p>
     <br>
 </section>

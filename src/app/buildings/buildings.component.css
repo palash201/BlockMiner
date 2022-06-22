@@ -1,0 +1,31 @@
+section {
+    width: 600px;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+.large-icon {
+    font-size: 96px;
+    height: 96px;
+    width: 96px;
+    background: rgb(185, 147, 147);
+    background: linear-gradient(45deg, rgba(185, 147, 147, 1) 0%, rgba(166, 142, 181, 1) 100%);
+    border: 6px inset gray;
+}
+
+.building-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.building-list > span > p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.building-list > span > button mat-icon {
+    margin-left: 0px;
+}

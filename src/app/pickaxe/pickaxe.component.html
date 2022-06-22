@@ -1,24 +1,29 @@
 <section>
     <h1>Pickaxe</h1>
-    <h2>Level 1</h2>
-    <mat-progress-bar [value]="30"></mat-progress-bar>
+    <h2>Level {{pickaxe.level | number: '1.0-1'}}</h2>
+    <div>
+        <mat-progress-bar [value]="pickaxe.xp / pickaxe.xpRequiredToLevel() * 100"></mat-progress-bar>
+        <span>{{pickaxe.xp | number: '1.0-1'}}/{{pickaxe.xpRequiredToLevel()}} XP</span>
+    </div>
     <p>
         <mat-icon aria-label="Pickaxe icon" svgIcon="pickaxe"></mat-icon>
-         5 Power
+         {{pickaxe.getPower() | number: '1.0-1'}} Power
     </p>
     <p>
-        <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
-         3 Luck
+        <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
+         {{1 | number: '1.0-1'}} Stone / block
     </p>
     <br>
     <h2>Enchantments</h2>
-    <p>
-        <mat-icon aria-label="Pickaxe icon" svgIcon="pickaxe"></mat-icon>
-         Efficiency I
+    <p *ngFor="let enchantment of pickaxe.enchantments | keyvalue">
+        <span class="icon-adjust" *ngIf="enchantment.value != 0">
+            <mat-icon aria-label="Enchanted Book icon" svgIcon="enchantedBook"></mat-icon>
+             {{enchantment.key}} {{convertToRoman(enchantment.value)}}
+        </span>
     </p>
     <br>
     <button mat-raised-button>
-        Enchant for
+        Unlock Efficiency
         <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
         5
     </button>

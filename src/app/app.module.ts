@@ -11,12 +11,14 @@ import { InfoComponent } from './info/info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PickaxeComponent } from './pickaxe/pickaxe.component';
+import { BuildingsComponent } from './buildings/buildings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
-    PickaxeComponent
+    PickaxeComponent,
+    BuildingsComponent
   ],
   imports: [
     BrowserModule,

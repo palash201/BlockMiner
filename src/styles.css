@@ -18,8 +18,14 @@ mat-icon {
 
 p > mat-icon {
     position:relative;
-    top: 6px;
+    top: 5px;
 }
+
+.icon-adjust > mat-icon {
+    position:relative;
+    top: 5px;
+}
+
 
 section {
     width: 284px;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { player } from '../player';
 
 @Component({
   selector: 'app-info',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
+
+  player = player;
 
   constructor() { }
 
