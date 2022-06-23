@@ -1,0 +1,16 @@
+button {
+    margin-bottom: 8px;
+}
+
+.big-text {
+    font-size: large;
+}
+
+.no-left-margin {
+    margin-left: 0px;
+}
+
+.shift-down {
+    position:relative;
+    top: 7px;
+}

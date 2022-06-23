@@ -1,9 +1,9 @@
 <section>
     <h1>Pickaxe</h1>
-    <h2>Level {{pickaxe.level | number: '1.0-1'}}</h2>
+    <h2>Level {{pickaxe.level | shortNumber}}</h2>
     <div>
         <mat-progress-bar [value]="pickaxe.xp / pickaxe.xpRequiredToLevel() * 100"></mat-progress-bar>
-        <span>{{pickaxe.xp | number: '1.0-1'}}/{{pickaxe.xpRequiredToLevel()}} XP</span>
+        <span>{{pickaxe.xp | shortNumber}}/{{pickaxe.xpRequiredToLevel() | shortNumber}} XP</span>
     </div>
     <p>
         <mat-icon aria-label="Pickaxe icon" svgIcon="pickaxe"></mat-icon>
@@ -11,21 +11,55 @@
     </p>
     <p>
         <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
-         {{1 | number: '1.0-1'}} Stone / block
+         {{pickaxe.getStonePerBlock() | number: '1.0-1'}} Stone / block
+    </p>
+    <p>
+        <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
+         {{pickaxe.getRubiesPerBlock() | number: '1.0-2'}} Rubies / block
+    </p>
+    <p>
+        <mat-icon aria-label="Experience icon" svgIcon="experience"></mat-icon>
+         {{pickaxe.getXpPerBlock() | number: '1.0-1'}} XP / block
     </p>
     <br>
     <h2>Enchantments</h2>
-    <p *ngFor="let enchantment of pickaxe.enchantments | keyvalue">
-        <span class="icon-adjust" *ngIf="enchantment.value != 0">
+    <p *ngFor="let enchantment of enchantList">
+        <span class="icon-adjust" *ngIf="pickaxe.enchantments.has(enchantment)">
             <mat-icon aria-label="Enchanted Book icon" svgIcon="enchantedBook"></mat-icon>
-             {{enchantment.key}} {{convertToRoman(enchantment.value)}}
+            <span> {{enchantment}} {{convertToRoman(pickaxe.enchantments.get(enchantment))}}</span>
+            <app-buy-button
+             buyType="+1"
+             [purchaseName]="enchantment"
+             [displayPurchaseName]="false"
+             [currency]="Rubies"
+             [cost]="pickaxe.getEnchantUpgradeCost(enchantment)"
+             (click)="player.upgradeEnchantment(enchantment)">
+            </app-buy-button>
         </span>
     </p>
-    <br>
-    <button mat-raised-button>
-        Unlock Efficiency
-        <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
-        5
-    </button>
+    <app-buy-button
+     buyType="Unlock" 
+     purchaseName="Efficiency" 
+     [currency]="Rubies" 
+     [cost]="pickaxe.getEnchantUnlockCost(enchantList[0])"
+     (click)="player.unlockEnchantment(enchantList[0])"
+     [hidden]="pickaxe.enchantments.has(enchantList[0])">
+    </app-buy-button>
+    <app-buy-button
+     buyType="Unlock" 
+     purchaseName="Fortune" 
+     [currency]="Rubies" 
+     [cost]="pickaxe.getEnchantUnlockCost(enchantList[1])"
+     (click)="player.unlockEnchantment(enchantList[1])"
+     [hidden]="pickaxe.enchantments.has(enchantList[1])">
+    </app-buy-button>
+    <app-buy-button
+     buyType="Unlock" 
+     purchaseName="Lucky" 
+     [currency]="Rubies" 
+     [cost]="pickaxe.getEnchantUnlockCost(enchantList[2])"
+     (click)="player.unlockEnchantment(enchantList[2])"
+     [hidden]="pickaxe.enchantments.has(enchantList[2])">
+    </app-buy-button>
     <br>
 </section>

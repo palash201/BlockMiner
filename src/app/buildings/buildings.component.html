@@ -4,29 +4,77 @@
         <span>
             <mat-icon aria-label="Quarry icon" svgIcon="quarry" class="large-icon"></mat-icon>
             <p>Quarry</p>
-            <button mat-raised-button>
-                <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
-                 25 
-            </button>
+            <p *ngIf="player.buildings.getBuildingLevel(quarry) > 0"> Level {{player.buildings.getBuildingLevel(quarry)}}</p>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="Quarry"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUnlockCost(quarry)"
+             (click)="player.unlockBuilding(quarry)"
+             [hidden]="player.buildings.isUnlocked(quarry)">
+            </app-buy-button>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="Quarry"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUpgradeCost(quarry)"
+             (click)="player.upgradeBuilding(quarry)"
+             [hidden]="!(player.buildings.isUnlocked(quarry) && player.buildings.canUpgrade(quarry))">
+            </app-buy-button>
         </span>
         <span>
             <mat-icon aria-label="Forge icon" svgIcon="forge" class="large-icon"></mat-icon>
             <p>Forge</p>
-            <button mat-raised-button>
-                <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
-                 500
-            </button>
+            <p *ngIf="player.buildings.getBuildingLevel(forge) > 0"> Level {{player.buildings.getBuildingLevel(forge)}}</p>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="forge"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUnlockCost(forge)"
+             (click)="player.unlockBuilding(forge)"
+             [hidden]="player.buildings.isUnlocked(forge)">
+            </app-buy-button>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="forge"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUpgradeCost(forge)"
+             (click)="player.upgradeBuilding(forge)"
+             [hidden]="!(player.buildings.isUnlocked(forge) && player.buildings.canUpgrade(forge))">
+            </app-buy-button>
         </span>
         <span>
             <mat-icon aria-label="Shrine icon" svgIcon="shrine" class="large-icon"></mat-icon>
-            <p>Shrine</p>
-            <button mat-raised-button>
-                <mat-icon aria-label="Stone icon" svgIcon="stone"></mat-icon>
-                 10000
-                <br>
-                <mat-icon aria-label="Ruby icon" svgIcon="ruby"></mat-icon>
-                 100
-            </button>
+            <p>Shrine (tba)</p>
+            <p *ngIf="player.buildings.getBuildingLevel(shrine) > 0"> Level {{player.buildings.getBuildingLevel(shrine)}}</p>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="shrine"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUnlockCost(shrine)"
+             (click)="player.unlockBuilding(shrine)"
+             [hidden]="player.buildings.isUnlocked(shrine)">
+            </app-buy-button>
+            <app-buy-button
+             buyType="Unlock"
+             [displayBuyType]="false"
+             purchaseName="shrine"
+             [displayPurchaseName]="false"
+             [costType]="'CostMap'"
+             [costMap]="player.buildings.getBuildingUpgradeCost(shrine)"
+             (click)="player.upgradeBuilding(shrine)"
+             [hidden]="!(player.buildings.isUnlocked(shrine) && player.buildings.canUpgrade(shrine))">
+            </app-buy-button>
         </span>
     </div>
     <br>

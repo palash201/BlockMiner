@@ -1,0 +1,13 @@
+div {
+    width: 330px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    background-color: white;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+h1 {
+    text-align: left;
+}

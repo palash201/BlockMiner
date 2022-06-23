@@ -1,5 +1,6 @@
 section {
     width: 600px;
+    height: 299px;
 }
 
 h1 {
@@ -26,6 +27,6 @@ h1 {
     margin-bottom: 4px;
 }
 
-.building-list > span > button mat-icon {
+mat-icon {
     margin-left: 0px;
 }

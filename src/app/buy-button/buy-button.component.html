@@ -1,0 +1,16 @@
+<button mat-raised-button *ngIf="!hidden && costType == 'Single'">
+    <span *ngIf="displayBuyType && cost != inf">{{buyType}} </span>
+    <span *ngIf="displayPurchaseName && cost != inf">{{purchaseName}}</span>
+    <mat-icon *ngIf="cost != inf" aria-label="Currency icon" [svgIcon]="currency.iconName"></mat-icon>
+    <span *ngIf="cost != inf">{{cost | shortNumber}}</span>
+    <span class="big-text" *ngIf="cost == inf">Maxed!</span>
+</button>
+<button mat-raised-button *ngIf="!hidden && costType == 'CostMap'">
+    <span *ngIf="displayBuyType">{{buyType}}</span>
+    <span *ngIf="displayPurchaseName">{{purchaseName}}</span>
+    <span *ngFor="let pair of costMap | keyvalue">
+        <mat-icon *ngIf="pair.value != inf" class="no-left-margin shift-down" aria-label="Currency icon" [svgIcon]="pair.key.iconName"></mat-icon>
+        <span *ngIf="pair.value != inf"> {{pair.value | shortNumber}}</span>
+        <br>
+    </span>
+</button>

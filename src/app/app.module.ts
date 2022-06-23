@@ -12,13 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PickaxeComponent } from './pickaxe/pickaxe.component';
 import { BuildingsComponent } from './buildings/buildings.component';
+import { BuyButtonComponent } from './buy-button/buy-button.component';
+import { ShortNumberPipe } from './pipes/short-number.pipe';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
     PickaxeComponent,
-    BuildingsComponent
+    BuildingsComponent,
+    BuyButtonComponent,
+    ShortNumberPipe,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
