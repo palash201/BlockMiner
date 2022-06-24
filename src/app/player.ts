@@ -2,6 +2,7 @@ import { Buildings, Building } from "./building";
 import { Currency, Rubies, Stone } from "./currency";
 import { Enchantment } from "./enchantment";
 import { Pickaxe } from "./pickaxe";
+import { loadData } from "./save";
 
 export class Player {
     blocksMined: number = 0;
@@ -10,10 +11,8 @@ export class Player {
     buildings: Buildings = new Buildings();
 
     constructor() {
-        this.pickaxe.player = this;
-        this.resources.set(Stone, 0);
-        this.resources.set(Rubies, 1);
     }
+    
     getPowerMultiplier(): number {
         let multi = 1;
         multi *= 1 + (this.buildings.getBuildingLevel(Building.Forge) * 0.5)
@@ -161,3 +160,4 @@ export class Player {
 }
 
 export const player = new Player();
+loadData();

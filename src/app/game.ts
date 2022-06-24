@@ -2,6 +2,7 @@ import { Rubies, Stone } from "./currency";
 import { player } from "./player";
 
 export const tick_delay = 500; // millis
+export const autosave_delay = 15000 // millis
 
 let previousTime: number = Date.now();
 export function tick() {

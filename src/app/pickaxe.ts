@@ -1,8 +1,7 @@
 import { Enchantment, levelCaps } from "./enchantment";
-import { Player } from "./player";
+import { player } from "./player";
 
 export class Pickaxe {
-    player: Player | null = null;
     level: number = 1;
     xp: number = 0;
     basePower: number = 5;
@@ -14,14 +13,11 @@ export class Pickaxe {
     constructor() {
     }
 
-    setPlayer(player: Player) {
-        this.player = player;
-    }
     getStonePerBlock():number {
         let stonePerBlock = this.baseStonePerBlock;
         stonePerBlock *= 1 + (this.getEnchantLevel(Enchantment.Fortune) * 0.5);
-        if (this.player) {
-            stonePerBlock *= this.player.getStoneMultiplier();
+        if (player) {
+            stonePerBlock *= player.getStoneMultiplier();
         }
         return stonePerBlock;
     }
@@ -29,15 +25,15 @@ export class Pickaxe {
         let rubiesPerBlock = this.baseRubiesPerBlock;
         rubiesPerBlock *= 1 + (this.getEnchantLevel(Enchantment.Fortune) * 0.5);
         rubiesPerBlock *= 1 + (this.getEnchantLevel(Enchantment.Lucky));
-        if (this.player) {
-            rubiesPerBlock *= this.player.getRubyMultiplier();
+        if (player) {
+            rubiesPerBlock *= player.getRubyMultiplier();
         }
         return rubiesPerBlock;
     }
     getXpPerBlock():number {
         let xpPerBlock = this.baseXpPerBlock;
-        if (this.player) {
-            xpPerBlock *= this.player.getXpMultiplier();
+        if (player) {
+            xpPerBlock *= player.getXpMultiplier();
         }
         return xpPerBlock;
     }
@@ -57,10 +53,10 @@ export class Pickaxe {
         if (effLevel) {
             power += Math.pow(effLevel+1, 2); // Efficiency bonus
         }
-        if (this.player) {
-            power *= this.player.getPowerMultiplier(); // Player's multiplier bonus
+        if (player) {
+            power *= player.getPowerMultiplier(); // Player's multiplier bonus
         }
-        power *= (this.level+1)/2; // level bonus
+        power *= (this.level); // level bonus
         return power;
     }
     addEnchantment(enchantment: Enchantment, level: number): void {

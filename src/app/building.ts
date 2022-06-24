@@ -27,14 +27,14 @@ export class Buildings {
     getBuildingUnlockCost(building: Building): Map<Currency, number> {
         let cost = new Map<Currency, number>();
         if (building == Building.Quarry) {
-            cost.set(Stone, 25);
+            cost.set(Stone, 10);
         }
         else if (building == Building.Forge) {
-            cost.set(Stone, 500);
+            cost.set(Stone, 100);
         }
         else if (building == Building.Shrine) {
-            cost.set(Stone, 10000);
-            cost.set(Rubies, 100);
+            cost.set(Stone, 1000);
+            cost.set(Rubies, 25);
         }
         return cost;
     }
@@ -42,10 +42,10 @@ export class Buildings {
     getBuildingUpgradeCost(building: Building): Map<Currency, number> {
         let cost = new Map<Currency, number>();
         if (building == Building.Quarry) {
-            cost.set(Stone, 25 * (this.getBuildingLevel(building) + 1));
+            cost.set(Stone, Math.floor(1 + this.getBuildingLevel(building)/10) * 5 * (this.getBuildingLevel(building) + 1) * (this.getBuildingLevel(building) + 2));
         }
         else if (building == Building.Forge) {
-            cost.set(Stone, 500 * (this.getBuildingLevel(building) + 1));
+            cost.set(Stone, Math.floor(1 + this.getBuildingLevel(building)/10) * 50 * (this.getBuildingLevel(building) + 1) * (this.getBuildingLevel(building) + 2));
         }
         else if (building == Building.Shrine) {
             cost.set(Stone, Infinity);
@@ -79,6 +79,6 @@ export enum Building {
 }
 
 export const buildingLevelCaps: Map<Building, number> = new Map<Building, number>();
-buildingLevelCaps.set(Building.Quarry, 100);
-buildingLevelCaps.set(Building.Forge, 10);
+buildingLevelCaps.set(Building.Quarry, Infinity);
+buildingLevelCaps.set(Building.Forge, Infinity);
 buildingLevelCaps.set(Building.Shrine, 1);

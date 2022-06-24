@@ -1,0 +1,11 @@
+#bottom-bar {
+    display:flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#spacer {
+    flex: 1;
+}
