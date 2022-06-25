@@ -1,0 +1,21 @@
+<section *ngIf="player.buildings.isUnlocked(lab)">
+    <h1>Lab (Not Finished)</h1>
+    <p>Prestige and reset everything for emeralds. Researches and emeralds are kept.</p>
+    <p class="centered">
+        <button mat-raised-button>
+            Prestige and get <mat-icon aria-label="Emerald icon" svgIcon="emerald"></mat-icon> 50
+        </button>
+    </p>
+    <br>
+    <h2>Research</h2>
+    <p class="align-left" *ngFor="let research of researchList">
+        <span class="icon-adjust" *ngIf="true">
+            <mat-icon aria-label="Flask icon" svgIcon="lab"></mat-icon>
+            <span> {{research}} {{'V'}}</span>
+            <app-buy-button buyType="+1" [purchaseName]="research" [displayPurchaseName]="false" [currency]="Emeralds"
+                [cost]="69" (click)="console.log('foo')">
+            </app-buy-button>
+        </span>
+    </p>
+    
+</section>

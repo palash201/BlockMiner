@@ -6,7 +6,7 @@ export const icons: Map<string,string> = new Map([
     ["enchantedBook", "./assets/enchantedBook.svg"],
     ["forge", "./assets/forge.svg"],
     ["quarry", "./assets/quarry.svg"],
-    ["shrine", "./assets/shrine.svg"],
+    ["lab", "./assets/lab.svg"],
     ["experience", "./assets/experience.svg"],
     ["emerald", "./assets/emerald.svg"]
 ]);

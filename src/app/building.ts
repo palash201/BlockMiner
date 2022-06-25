@@ -32,7 +32,7 @@ export class Buildings {
         else if (building == Building.Forge) {
             cost.set(Stone, 100);
         }
-        else if (building == Building.Shrine) {
+        else if (building == Building.Lab) {
             cost.set(Stone, 1000);
             cost.set(Rubies, 25);
         }
@@ -47,7 +47,7 @@ export class Buildings {
         else if (building == Building.Forge) {
             cost.set(Stone, Math.floor(1 + this.getBuildingLevel(building)/10) * 50 * (this.getBuildingLevel(building) + 1) * (this.getBuildingLevel(building) + 2));
         }
-        else if (building == Building.Shrine) {
+        else if (building == Building.Lab) {
             cost.set(Stone, Infinity);
             cost.set(Rubies, Infinity);
         }
@@ -75,10 +75,10 @@ export class Buildings {
 export enum Building {
     Quarry = "Quarry",
     Forge = "Forge",
-    Shrine = "Shrine",
+    Lab = "Lab",
 }
 
 export const buildingLevelCaps: Map<Building, number> = new Map<Building, number>();
 buildingLevelCaps.set(Building.Quarry, Infinity);
 buildingLevelCaps.set(Building.Forge, Infinity);
-buildingLevelCaps.set(Building.Shrine, 1);
+buildingLevelCaps.set(Building.Lab, 1);

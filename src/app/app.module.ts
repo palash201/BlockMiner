@@ -16,7 +16,8 @@ import { BuyButtonComponent } from './buy-button/buy-button.component';
 import { ShortNumberPipe } from './pipes/short-number.pipe';
 import { TitleComponent } from './title/title.component';
 import { BottomBarComponent } from './bottom-bar/bottom-bar.component';
-import { ShrineComponent } from './shrine/shrine.component';
+import { LabComponent } from './lab/lab.component';
+import { RomanPipe } from './roman.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ShrineComponent } from './shrine/shrine.component';
     ShortNumberPipe,
     TitleComponent,
     BottomBarComponent,
-    ShrineComponent
+    LabComponent,
+    RomanPipe
   ],
   imports: [
     BrowserModule,

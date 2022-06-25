@@ -10,3 +10,4 @@ export class Currency {
 
 export const Stone = new Currency("Stone", "stone");
 export const Rubies = new Currency("Rubies", "ruby");
+export const Emeralds = new Currency("Emeralds", "emerald")

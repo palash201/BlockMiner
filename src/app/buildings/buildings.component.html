@@ -52,28 +52,28 @@
             </app-buy-button>
         </span>
         <span>
-            <mat-icon aria-label="Shrine icon" svgIcon="shrine" class="large-icon"></mat-icon>
-            <p>Shrine (tba)</p>
-            <p *ngIf="player.buildings.getBuildingLevel(shrine) > 0"> Level {{player.buildings.getBuildingLevel(shrine)}}</p>
+            <mat-icon aria-label="Lab icon" svgIcon="lab" class="large-icon"></mat-icon>
+            <p>Lab</p>
+            <p *ngIf="player.buildings.getBuildingLevel(lab) > 0">(Bought)</p>
             <app-buy-button
              buyType="Unlock"
              [displayBuyType]="false"
-             purchaseName="shrine"
+             purchaseName="lab"
              [displayPurchaseName]="false"
              [costType]="'CostMap'"
-             [costMap]="player.buildings.getBuildingUnlockCost(shrine)"
-             (click)="player.unlockBuilding(shrine)"
-             [hidden]="player.buildings.isUnlocked(shrine)">
+             [costMap]="player.buildings.getBuildingUnlockCost(lab)"
+             (click)="player.unlockBuilding(lab)"
+             [hidden]="player.buildings.isUnlocked(lab)">
             </app-buy-button>
             <app-buy-button
              buyType="Unlock"
              [displayBuyType]="false"
-             purchaseName="shrine"
+             purchaseName="lab"
              [displayPurchaseName]="false"
              [costType]="'CostMap'"
-             [costMap]="player.buildings.getBuildingUpgradeCost(shrine)"
-             (click)="player.upgradeBuilding(shrine)"
-             [hidden]="!(player.buildings.isUnlocked(shrine) && player.buildings.canUpgrade(shrine))">
+             [costMap]="player.buildings.getBuildingUpgradeCost(lab)"
+             (click)="player.upgradeBuilding(lab)"
+             [hidden]="!(player.buildings.isUnlocked(lab) && player.buildings.canUpgrade(lab))">
             </app-buy-button>
         </span>
     </div>

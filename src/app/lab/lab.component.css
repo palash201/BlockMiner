@@ -1,0 +1,19 @@
+section {
+    width: 330px;
+}
+
+span > span {
+    margin-right: 24px;
+}
+
+section {
+    text-align: center;
+}
+
+.align-left {
+    text-align: left;
+}
+
+div {
+    height: 24px;
+}

@@ -8,6 +8,6 @@ Forge
 - Pick Power multi per level
 - Unlock Blacksmithing at Forge Level 10
 
-Shrine
+Lab
 - Unlock new Enchantments
 - No levels, but initial building cost of Stone and Rubies

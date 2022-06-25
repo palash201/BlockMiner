@@ -14,7 +14,7 @@ export class BuildingsComponent implements OnInit {
   Stone = Stone;
   quarry = Building.Quarry;
   forge = Building.Forge;
-  shrine = Building.Shrine;
+  lab = Building.Lab;
 
   constructor() { }
 
